@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Increíble Malla Curricular Química y Farmacia</title>
+  <title>Malla Curricular Química y Farmacia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -16,9 +17,8 @@
       color: #b30059;
     }
     .malla {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1em;
     }
     .semestre {
@@ -26,7 +26,6 @@
       border: 2px solid #ff99cc;
       border-radius: 10px;
       padding: 1em;
-      min-width: 220px;
       box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
     }
     .semestre h2 {
@@ -71,6 +70,12 @@
       font-size: 0.8em;
       white-space: nowrap;
       z-index: 2;
+    }
+
+    @media (max-width: 600px) {
+      .malla {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
